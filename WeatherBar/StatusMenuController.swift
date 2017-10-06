@@ -11,6 +11,9 @@ import Cocoa
 class StatusMenuController: NSObject {
 
 	@IBOutlet weak var statusMenu: NSMenu!
+	@IBOutlet weak var weatherView: WeatherView!
+
+	var weatherMenuItem: NSMenuItem!
 
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 	let weatherAPI = WeatherAPI()
@@ -30,14 +33,15 @@ class StatusMenuController: NSObject {
 		statusItem.image = icon
 		statusItem.menu = statusMenu
 
+		weatherMenuItem = statusMenu.item(withTitle: "Weather")
+		weatherMenuItem.view = weatherView
+
 		updateWeather()
 	}
 
 	func updateWeather() {
 		weatherAPI.fetchWeather("Nuremberg") { weather in
-			if let weatherMenuItem = self.statusMenu.item(withTitle: "Weather") {
-				weatherMenuItem.title = weather.description
-			}
+			self.weatherView.update(weather)
 		}
 	}
 

@@ -34,7 +34,9 @@ class StatusMenuController: NSObject {
 	}
 
 	func updateWeather() {
-		weatherAPI.fetchWeather("Nuremberg")
+		weatherAPI.fetchWeather("Nuremberg") { weather in
+			NSLog(weather.description)
+		}
 	}
 
 }

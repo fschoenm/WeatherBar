@@ -23,7 +23,7 @@ class WeatherAPI {
 	let API_KEY = "8b5f65c290e9dd46825a803d8647481d"
 	let BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
-	func fetchWeather(_ query: String) {
+	func fetchWeather(_ query: String, success: @escaping (Weather) -> Void) {
 		let session = URLSession.shared
 		let escapedQuery = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
 		let url = URL(string: "\(BASE_URL)?APPID=\(API_KEY)&units=metric&q=\(escapedQuery!)")
@@ -38,6 +38,7 @@ class WeatherAPI {
 				case 200:
 					if let weather = self.weatherFromJSONData(data!) {
 						NSLog("\(weather)")
+						success(weather)
 					}
 				case 401:
 					NSLog("Weather API error: Unauthorized")

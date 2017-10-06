@@ -37,7 +37,6 @@ class WeatherAPI {
 				switch httpResponse.statusCode {
 				case 200:
 					if let weather = self.weatherFromJSONData(data!) {
-						NSLog("\(weather)")
 						success(weather)
 					}
 				case 401:

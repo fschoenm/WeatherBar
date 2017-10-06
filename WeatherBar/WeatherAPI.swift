@@ -20,13 +20,20 @@ struct Weather: CustomStringConvertible {
 
 class WeatherAPI {
 
-	let API_KEY = "8b5f65c290e9dd46825a803d8647481d"
 	let BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
 	func fetchWeather(_ query: String, success: @escaping (Weather) -> Void) {
+		// load API key from property list
+		var API_KEY: String!
+		if let path = Bundle.main.path(forResource: "ApiKeys", ofType: "plist") {
+			let keys = NSDictionary(contentsOfFile: path)
+			API_KEY = keys?["OpenWeatherMap"] as! String
+		}
+
+		// try to fetch weather
 		let session = URLSession.shared
 		let escapedQuery = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-		let url = URL(string: "\(BASE_URL)?APPID=\(API_KEY)&units=metric&q=\(escapedQuery!)")
+		let url = URL(string: "\(BASE_URL)?APPID=\(API_KEY!)&units=metric&q=\(escapedQuery!)")
 		let task = session.dataTask(with: url!) { data, response, err in
 
 			if let error = err {

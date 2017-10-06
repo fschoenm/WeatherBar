@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07182AD51F87DE4F00B1F03D /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07182AD41F87DE4F00B1F03D /* ApiKeys.plist */; };
 		07D66BC21F857C9500F64C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D66BC11F857C9500F64C49 /* AppDelegate.swift */; };
 		07D66BC41F857C9500F64C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D66BC31F857C9500F64C49 /* Assets.xcassets */; };
 		07D66BC71F857C9500F64C49 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D66BC51F857C9500F64C49 /* MainMenu.xib */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07182AD41F87DE4F00B1F03D /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		07D66BBE1F857C9500F64C49 /* WeatherBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D66BC11F857C9500F64C49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07D66BC31F857C9500F64C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				07D66BC31F857C9500F64C49 /* Assets.xcassets */,
 				07D66BC51F857C9500F64C49 /* MainMenu.xib */,
 				07D66BC81F857C9500F64C49 /* Info.plist */,
+				07182AD41F87DE4F00B1F03D /* ApiKeys.plist */,
 				07D66BC91F857C9500F64C49 /* WeatherBar.entitlements */,
 			);
 			path = WeatherBar;
@@ -183,6 +186,7 @@
 			files = (
 				07D66BC41F857C9500F64C49 /* Assets.xcassets in Resources */,
 				07D66BC71F857C9500F64C49 /* MainMenu.xib in Resources */,
+				07182AD51F87DE4F00B1F03D /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

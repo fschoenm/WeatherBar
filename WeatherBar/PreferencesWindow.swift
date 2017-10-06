@@ -8,9 +8,15 @@
 
 import Cocoa
 
-class PreferencesWindow: NSWindowController {
+protocol PreferencesWindowDelegate {
+	func preferencesDidUpdate()
+}
+
+class PreferencesWindow: NSWindowController, NSWindowDelegate {
 
 	@IBOutlet var cityTextField: NSTextField!
+
+	var delegate: PreferencesWindowDelegate?
 
 	override var windowNibName: NSNib.Name? {
 		return NSNib.Name(rawValue: "PreferencesWindow")
@@ -23,11 +29,16 @@ class PreferencesWindow: NSWindowController {
 		self.window?.center()
 		self.window?.makeKeyAndOrderFront(nil)
 		NSApp.activate(ignoringOtherApps: true)
+
+		let defaults = UserDefaults.standard
+		let city = defaults.string(forKey: "city") ?? DEFAULT_CITY
+		cityTextField.stringValue = city
     }
 
 	func windowWillClose(_ notification: Notification) {
 		let defaults = UserDefaults.standard
 		defaults.setValue(cityTextField.stringValue, forKey: "city")
+		delegate?.preferencesDidUpdate()
 	}
 
 }

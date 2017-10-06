@@ -8,7 +8,10 @@
 
 import Cocoa
 
-class StatusMenuController: NSObject {
+// FIXME: move to Info.plist
+let DEFAULT_CITY = "Berlin, Germany"
+
+class StatusMenuController: NSObject, PreferencesWindowDelegate {
 
 	@IBOutlet weak var statusMenu: NSMenu!
 	@IBOutlet weak var weatherView: WeatherView!
@@ -34,6 +37,7 @@ class StatusMenuController: NSObject {
 	override func awakeFromNib() {
 		// Insert code here to initialize your application
 		preferencesWindow = PreferencesWindow()
+		preferencesWindow.delegate = self
 
 		let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
 		icon?.isTemplate = true
@@ -46,8 +50,15 @@ class StatusMenuController: NSObject {
 		updateWeather()
 	}
 
+	func preferencesDidUpdate() {
+		updateWeather()
+	}
+
 	func updateWeather() {
-		weatherAPI.fetchWeather("Nuremberg") { weather in
+		let defaults = UserDefaults.standard
+		let city = defaults.string(forKey: "city") ?? DEFAULT_CITY
+
+		weatherAPI.fetchWeather(city) { weather in
 			self.weatherView.update(weather)
 		}
 	}

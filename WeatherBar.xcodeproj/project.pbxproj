@@ -11,6 +11,8 @@
 		07D66BC41F857C9500F64C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D66BC31F857C9500F64C49 /* Assets.xcassets */; };
 		07D66BC71F857C9500F64C49 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D66BC51F857C9500F64C49 /* MainMenu.xib */; };
 		07D66BD31F857C9500F64C49 /* WeatherBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D66BD21F857C9500F64C49 /* WeatherBarTests.swift */; };
+		07D66BDE1F85806D00F64C49 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D66BDD1F85806D00F64C49 /* StatusMenuController.swift */; };
+		07D66BE01F85821100F64C49 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D66BDF1F85821100F64C49 /* WeatherAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		07D66BCE1F857C9500F64C49 /* WeatherBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D66BD21F857C9500F64C49 /* WeatherBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBarTests.swift; sourceTree = "<group>"; };
 		07D66BD41F857C9500F64C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07D66BDD1F85806D00F64C49 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		07D66BDF1F85821100F64C49 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				07D66BC11F857C9500F64C49 /* AppDelegate.swift */,
+				07D66BDD1F85806D00F64C49 /* StatusMenuController.swift */,
+				07D66BDF1F85821100F64C49 /* WeatherAPI.swift */,
 				07D66BC31F857C9500F64C49 /* Assets.xcassets */,
 				07D66BC51F857C9500F64C49 /* MainMenu.xib */,
 				07D66BC81F857C9500F64C49 /* Info.plist */,
@@ -194,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D66BE01F85821100F64C49 /* WeatherAPI.swift in Sources */,
+				07D66BDE1F85806D00F64C49 /* StatusMenuController.swift in Sources */,
 				07D66BC21F857C9500F64C49 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

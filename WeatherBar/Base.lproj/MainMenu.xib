@@ -26,8 +26,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="ZcX-jw-wzl"/>
-                <menuItem title="Update" id="p9V-oB-P8O">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Update" keyEquivalent="r" id="p9V-oB-P8O">
                     <connections>
                         <action selector="updateClicked:" target="Vom-5Y-yBT" id="zup-N5-5Fo"/>
                     </connections>
@@ -37,8 +36,7 @@
                         <action selector="preferencesClicked:" target="Vom-5Y-yBT" id="Kzl-vi-cdq"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Quit" id="hmb-OF-5Q1">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Quit" keyEquivalent="q" id="hmb-OF-5Q1">
                     <connections>
                         <action selector="quitClicked:" target="Vom-5Y-yBT" id="cif-c8-D0O"/>
                     </connections>

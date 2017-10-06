@@ -27,6 +27,10 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="tjd-ou-3UC"/>
+                <menuItem title="Weather" id="3IR-Sd-xVD" userLabel="Weather">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="ZcX-jw-wzl"/>
                 <menuItem title="Quit" id="hmb-OF-5Q1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

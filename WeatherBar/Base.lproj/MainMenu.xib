@@ -22,17 +22,21 @@
         </customObject>
         <menu id="uXm-eO-1aA">
             <items>
+                <menuItem title="Weather" id="3IR-Sd-xVD" userLabel="Weather">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="ZcX-jw-wzl"/>
                 <menuItem title="Update" id="p9V-oB-P8O">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="updateClicked:" target="Vom-5Y-yBT" id="zup-N5-5Fo"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="tjd-ou-3UC"/>
-                <menuItem title="Weather" id="3IR-Sd-xVD" userLabel="Weather">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Preferences…" keyEquivalent="," id="K2J-Jk-d9l">
+                    <connections>
+                        <action selector="preferencesClicked:" target="Vom-5Y-yBT" id="Kzl-vi-cdq"/>
+                    </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="ZcX-jw-wzl"/>
                 <menuItem title="Quit" id="hmb-OF-5Q1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -75,7 +79,7 @@
                 <outlet property="currentConditionsLabel" destination="Udw-hr-TWF" id="htp-uW-8xj"/>
                 <outlet property="imageView" destination="Ivx-lw-wjs" id="taf-cK-VKY"/>
             </connections>
-            <point key="canvasLocation" x="-234" y="-179"/>
+            <point key="canvasLocation" x="-96" y="-325"/>
         </customView>
     </objects>
 </document>

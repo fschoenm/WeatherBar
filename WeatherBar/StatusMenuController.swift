@@ -14,6 +14,7 @@ class StatusMenuController: NSObject {
 	@IBOutlet weak var weatherView: WeatherView!
 
 	var weatherMenuItem: NSMenuItem!
+	var preferencesWindow: PreferencesWindow!
 
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 	let weatherAPI = WeatherAPI()
@@ -22,12 +23,18 @@ class StatusMenuController: NSObject {
 		updateWeather()
 	}
 
+	@IBAction func preferencesClicked(_ sender: NSMenuItem) {
+		preferencesWindow.showWindow(nil)
+	}
+
 	@IBAction func quitClicked(_ sender: NSMenuItem) {
 		NSApplication.shared.terminate(self)
 	}
 
 	override func awakeFromNib() {
 		// Insert code here to initialize your application
+		preferencesWindow = PreferencesWindow()
+
 		let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
 		icon?.isTemplate = true
 		statusItem.image = icon

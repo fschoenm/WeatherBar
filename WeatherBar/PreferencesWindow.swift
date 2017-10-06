@@ -25,4 +25,9 @@ class PreferencesWindow: NSWindowController {
 		NSApp.activate(ignoringOtherApps: true)
     }
 
+	func windowWillClose(_ notification: Notification) {
+		let defaults = UserDefaults.standard
+		defaults.setValue(cityTextField.stringValue, forKey: "city")
+	}
+
 }
